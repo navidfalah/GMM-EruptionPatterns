@@ -1,48 +1,46 @@
 from scipy.stats import multivariate_normal, norm
 
-# GMM parameters provided
-alpha1, alpha2 = 0.356, 0.644
-mu1, mu2 = [2.04, 54.5], [4.29, 80.0]
-sigma1 = [[0.0693, 0.436], [0.436, 33.7]]
-sigma2 = [[0.170, 0.939], [0.939, 36.0]]
+# Set parameters for Gaussian Mixture Model (GMM)
+mix_ratio_1, mix_ratio_2 = 0.356, 0.644
+mean_1, mean_2 = [2.04, 54.5], [4.29, 80.0]
+covariance_1 = [[0.0693, 0.436], [0.436, 33.7]]
+covariance_2 = [[0.170, 0.939], [0.939, 36.0]]
 
-# Expected number of eruptions from each component for 10 eruptions
-expected_component_1 = 10 * alpha1
-expected_component_2 = 10 * alpha2
+# Calculate expected number of eruptions for each component from 10 total eruptions
+expected_eruptions_1 = 10 * mix_ratio_1
+expected_eruptions_2 = 10 * mix_ratio_2
 
-# Probability that an eruption lasts between 3 and 4 minutes and next is between 60 and 70 minutes
-lower_bound, upper_bound = [3, 60], [4, 70]
-p1 = multivariate_normal(mu1, sigma1).cdf(upper_bound) - multivariate_normal(mu1, sigma1).cdf(lower_bound)
-p2 = multivariate_normal(mu2, sigma2).cdf(upper_bound) - multivariate_normal(mu2, sigma2).cdf(lower_bound)
-total_probability = alpha1 * p1 + alpha2 * p2
+# Calculate the probability of an eruption duration between 3-4 minutes and the following one between 60-70 minutes
+bounds_start, bounds_end = [3, 60], [4, 70]
+probability_1 = multivariate_normal(mean_1, covariance_1).cdf(bounds_end) - multivariate_normal(mean_1, covariance_1).cdf(bounds_start)
+probability_2 = multivariate_normal(mean_2, covariance_2).cdf(bounds_end) - multivariate_normal(mean_2, covariance_2).cdf(bounds_start)
+combined_probability = mix_ratio_1 * probability_1 + mix_ratio_2 * probability_2
 
-# Posterior probability for component 1 given an eruption time of 3 minutes
-eruption_time_observed = 3
-pdf_component1 = multivariate_normal(mu1, sigma1).pdf([eruption_time_observed, mu1[1]])
-pdf_component2 = multivariate_normal(mu2, sigma2).pdf([eruption_time_observed, mu2[1]])
-posterior1 = (pdf_component1 * alpha1) / (pdf_component1 * alpha1 + pdf_component2 * alpha2)
+# Compute the updated likelihood of component 1 given an observed eruption time of 3 minutes
+observed_eruption_time = 3
+likelihood_1 = norm(mean_1[0], covariance_1[0][0]**0.5).pdf(observed_eruption_time)
+likelihood_2 = norm(mean_2[0], covariance_2[0][0]**0.5).pdf(observed_eruption_time)
+updated_probability_1 = (likelihood_1 * mix_ratio_1) / (likelihood_1 * mix_ratio_1 + likelihood_2 * mix_ratio_2)
 
-# Conditional probability function
-def conditional_probability(mu, sigma, rho, x2, target_x):
-    conditional_mean = mu[0] + (rho * (sigma[0][1] / sigma[1][1]) * (x2 - mu[1]))
-    conditional_variance = (1 - rho**2) * sigma[0][0]
-    conditional_stddev = conditional_variance**0.5
-    return norm.cdf(target_x, conditional_mean, conditional_stddev)
+# Determine the conditional probability of the next eruption occurring in less than 60 minutes given an initial 3-minute eruption
+conditional_mean_1 = mean_1[1] + (covariance_1[0][1] / covariance_1[0][0]**0.5) * (observed_eruption_time - mean_1[0])
+conditional_variance_1 = covariance_1[1][1] * (1 - (covariance_1[0][1] / (covariance_1[0][0] * covariance_1[1][1]))**2)
+conditional_probability_1 = norm(conditional_mean_1, conditional_variance_1**0.5).cdf(60)
 
-# Correlation coefficients for both components
-rho1 = sigma1[0][1] / (sigma1[0][0]**0.5 * sigma1[1][1]**0.5)
-rho2 = sigma2[0][1] / (sigma2[0][0]**0.5 * sigma2[1][1]**0.5)
+conditional_mean_2 = mean_2[1] + (covariance_2[0][1] / covariance_2[0][0]**0.5) * (observed_eruption_time - mean_2[0])
+conditional_variance_2 = covariance_2[1][1] * (1 - (covariance_2[0][1] / (covariance_2[0][0] * covariance_2[1][1]))**2)
+conditional_probability_2 = norm(conditional_mean_2, conditional_variance_2**0.5).cdf(60)
 
-# Calculate the conditional probabilities for both components
-cond_prob1 = conditional_probability(mu1, sigma1, rho1, eruption_time_observed, 60)
-cond_prob2 = conditional_probability(mu2, sigma2, rho2, eruption_time_observed, 60)
+updated_probability_2 = 1 - updated_probability_1
+combined_conditional_probability = updated_probability_1 * conditional_probability_1 + updated_probability_2 * conditional_probability_2
 
-# Weighted conditional probabilities
-final_conditional_probability = posterior1 * cond_prob1 + (1 - posterior1) * cond_prob2
+# Summarize results
+results = {
+    "Expected eruptions from component 1": expected_eruptions_1,
+    "Expected eruptions from component 2": expected_eruptions_2,
+    "Probability of specified eruption durations": combined_probability,
+    "Updated probability for component 1": updated_probability_1,
+    "Conditional probability for next eruption < 60 mins": combined_conditional_probability
+}
 
-# Output results
-print(f"Expected number of eruptions from component 1: {expected_component_1}")
-print(f"Expected number of eruptions from component 2: {expected_component_2}")
-print(f"Total probability of eruption lasting between 3 and 4 minutes and next between 60 and 70 minutes: {total_probability}")
-print(f"Posterior probability for component 1 given an eruption time of 3 minutes: {posterior1}")
-print(f"Conditional probability of the next eruption being less than 60 minutes given current eruption lasts 3 minutes: {final_conditional_probability}")
+print(results)
