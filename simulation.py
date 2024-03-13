@@ -80,9 +80,9 @@ def simulate_conditional_distribution(num_samples=500, observed_eruption_time=3,
     return combined_prob
 
 # Generate dataset and perform analysis
-data = generate_dataset()
-plot_data(data)
-analyze_eruptions(data)
-calculate_probability_within_conditions(data)
-updated_prob_1 = calculate_updated_probability()
-simulate_conditional_distribution(500, 3, updated_prob_1)
+# data = generate_dataset()
+# plot_data(data)
+# analyze_eruptions(data)
+# calculate_probability_within_conditions(data)
+# updated_prob_1 = calculate_updated_probability()
+# simulate_conditional_distribution(500, 3, updated_prob_1)
