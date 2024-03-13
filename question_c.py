@@ -23,4 +23,5 @@ likelihood_2 = norm(mean_2[0], covariance_2[0][0]**0.5).pdf(observed_eruption_ti
 updated_probability_1 = (likelihood_1 * mix_ratio_1) / ((likelihood_1 * mix_ratio_1) + (likelihood_2 * mix_ratio_2))
 
 # Display the updated probability for component 1
-print(f"Updated probability for component 1: {updated_probability_1:.3f}")
+if __name__ == "__main__":
+    print(f"Updated probability for component 1: {updated_probability_1:.3f}")

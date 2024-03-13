@@ -19,4 +19,5 @@ conditional_probability_2 = norm(conditional_mean_2, conditional_variance_2**0.5
 combined_conditional_probability = updated_probability_1 * conditional_probability_1 + (1 - updated_probability_1) * conditional_probability_2
 
 # Display Result
-print(f"Conditional probability for next eruption < 60 mins: {combined_conditional_probability}")
+if __name__ == "__main__":
+    print(f"Conditional probability for next eruption < 60 mins: {combined_conditional_probability:.3f}")
