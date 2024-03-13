@@ -1,8 +1,6 @@
 from scipy.stats import multivariate_normal
 from parameters import mix_ratio_1, mix_ratio_2, mean_1, mean_2, covariance_1, covariance_2
 import logging
-import matplotlib.pyplot as plt
-import numpy as np
 
 logging.basicConfig(level=logging.INFO, format='%(message)s')
 
