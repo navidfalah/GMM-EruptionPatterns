@@ -42,12 +42,14 @@ def analyze_eruptions(data):
     num_eruptions_1 = np.sum(assignments)
     num_eruptions_2 = len(assignments) - num_eruptions_1
     print(f"Eruptions from Component 1: {num_eruptions_1}, Component 2: {num_eruptions_2}")
+    return num_eruptions_1, num_eruptions_2
 
 def calculate_probability_within_conditions(data):
     """Calculate the probability within specific conditions."""
     condition = (data[:, 0] >= 3) & (data[:, 0] <= 4) & (data[:, 1] >= 60) & (data[:, 1] <= 70)
     probability = np.mean(condition)
     print(f"Probability within conditions: {probability:.3f}")
+    return probability
 
 def calculate_updated_probability(observed_eruption_time=3):
     """Calculate the updated probability for component 1."""
@@ -75,6 +77,7 @@ def simulate_conditional_distribution(num_samples=500, observed_eruption_time=3,
     # Combine probabilities using the updated probability for component 1
     combined_prob = updated_probability_1 * simulated_prob_1 + (1 - updated_probability_1) * simulated_prob_2
     print(f"Conditional probability for next eruption < 60 mins: {combined_prob:.3f}")
+    return combined_prob
 
 # Generate dataset and perform analysis
 data = generate_dataset()
