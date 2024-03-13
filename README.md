@@ -43,13 +43,13 @@ To embark on this volcanic journey:
 
 Now you're all set to explore the volcanic eruption analysis project! 🌋
 
-## Overview 📋
+## Project Overview 📋
 
-Dive into the files:
+Explore the key components of the project:
 
-- `eruption_analysis.py`: Functions for generating simulated eruption data, analyzing eruption patterns, and calculating probabilities.
-- `simulate_conditional_distribution.py`: Simulates the conditional distribution for the time until the next eruption.
-- `tests/test_eruption_analysis.py`: Unit tests for validating the functions in `eruption_analysis.py`.
+- **main.py**: Executes the answers to the questions located in the `questions` directory using subprocess.
+- **simulation.py**: Provides a simulated conditional distribution and delivers data in an alternative format.
+- **tests/test_questions.py**: Contains unit tests to verify the functionalities of the functions located in the `questions` module using pytest.
 
 ## Actual Data 📊
 
@@ -74,12 +74,20 @@ The simulated data represents the eruption patterns generated using the paramete
 
 ## Usage 🧑‍💻
 
+### Running the Project 🚀
+
+To get the answer of the questions:
+
+```
+python main.py
+```
+
 ### Running the Simulation 🌐
 
 To witness the eruption analysis in action:
 
 ```
-python eruption_analysis.py
+python simulation.py
 ```
 
 Marvel at the results as they unfold before your eyes! 🤩
