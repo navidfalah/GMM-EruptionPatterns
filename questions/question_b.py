@@ -3,15 +3,14 @@ from os.path import dirname, join, abspath
 sys.path.insert(0, join(dirname(__file__), '..'))
 import logging
 from scipy.stats import multivariate_normal
-from parameters import mix_ratio_1, mix_ratio_2, mean_1, mean_2, covariance_1, covariance_2
-import numpy as np
+from questions.parameters import mix_ratio_1, mix_ratio_2, mean_1, mean_2, covariance_1, covariance_2
 
 sys.path.insert(0, join(dirname(__file__), '..'))
 logging.basicConfig(level=logging.INFO, format='%(message)s')
 import numpy as np
 from scipy.stats import multivariate_normal
 from scipy.integrate import dblquad
-from parameters import mix_ratio_1, mix_ratio_2, mean_1, mean_2, covariance_1, covariance_2
+from questions.parameters import mix_ratio_1, mix_ratio_2, mean_1, mean_2, covariance_1, covariance_2
 
 def pdf_component(x, y, mean, covariance):
     """Calculate the PDF of a bivariate normal distribution for a given (x, y)."""

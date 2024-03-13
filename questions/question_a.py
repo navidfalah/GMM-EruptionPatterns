@@ -2,7 +2,7 @@ import sys
 from os.path import dirname, join, abspath
 sys.path.insert(0, join(dirname(__file__), '..'))
 import logging
-from parameters import mix_ratio_1, mix_ratio_2
+from questions.parameters import mix_ratio_1, mix_ratio_2
 
 
 logging.basicConfig(level=logging.INFO, format='%(message)s')

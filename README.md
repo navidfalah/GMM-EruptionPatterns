@@ -28,3 +28,4 @@ cd to the project
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+export PYTHONPATH=/home/navid/Desktop/GMM-EruptionPatterns

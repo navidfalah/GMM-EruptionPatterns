@@ -3,7 +3,7 @@ from os.path import dirname, join, abspath
 sys.path.insert(0, join(dirname(__file__), '..'))
 import logging
 from scipy.stats import norm
-from parameters import mix_ratio_1, mix_ratio_2, mean_1, mean_2, covariance_1, covariance_2
+from questions.parameters import mix_ratio_1, mix_ratio_2, mean_1, mean_2, covariance_1, covariance_2
 
 logging.basicConfig(level=logging.INFO, format='%(message)s')
 
