@@ -1,0 +1,16 @@
+2024-03-13 09:56:54,791 - root - INFO - Starting script question_a.py
+2024-03-13 09:56:54,809 - root - INFO - Completed script question_a.py
+2024-03-13 09:56:54,809 - root - INFO - Starting script question_b.py
+2024-03-13 09:56:55,309 - root - ERROR - Script question_b.py failed with error Command '['python', 'question_b.py']' returned non-zero exit status 1.
+2024-03-13 09:56:55,310 - root - INFO - Starting script question_c.py
+2024-03-13 09:56:55,762 - root - INFO - Completed script question_c.py
+2024-03-13 09:56:55,762 - root - INFO - Starting script question_d.py
+2024-03-13 09:56:56,215 - root - INFO - Completed script question_d.py
+2024-03-13 09:59:08,741 - root - INFO - Starting script question_a.py
+2024-03-13 09:59:08,759 - root - INFO - Completed script question_a.py
+2024-03-13 09:59:08,759 - root - INFO - Starting script question_b.py
+2024-03-13 09:59:09,689 - root - ERROR - Script question_b.py failed with error Command '['python', 'question_b.py']' returned non-zero exit status 1.
+2024-03-13 09:59:09,689 - root - INFO - Starting script question_c.py
+2024-03-13 09:59:10,142 - root - INFO - Completed script question_c.py
+2024-03-13 09:59:10,143 - root - INFO - Starting script question_d.py
+2024-03-13 09:59:10,647 - root - INFO - Completed script question_d.py

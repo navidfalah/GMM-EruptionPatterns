@@ -1,6 +1,8 @@
 from scipy.stats import norm
-from parameters import (mean_1, mean_2, covariance_1, covariance_2)
-# Part D: Conditional Probability of Next Eruption Occurring in Less than 60 Minutes
+from parameters import mean_1, mean_2, covariance_1, covariance_2
+import logging
+
+logging.basicConfig(level=logging.INFO, format='%(message)s')
 
 # GMM Parameters and Observed Eruption Time
 observed_eruption_time = 3
@@ -15,9 +17,10 @@ conditional_mean_2 = mean_2[1] + (covariance_2[0][1] / covariance_2[0][0]**0.5) 
 conditional_variance_2 = covariance_2[1][1] * (1 - (covariance_2[0][1]**2 / (covariance_2[0][0] * covariance_2[1][1])))
 conditional_probability_2 = norm(conditional_mean_2, conditional_variance_2**0.5).cdf(60)
 
-# Assuming part C correctly identifies component 1, adjust for mixture component probabilities
+# Adjust for mixture component probabilities
 combined_conditional_probability = updated_probability_1 * conditional_probability_1 + (1 - updated_probability_1) * conditional_probability_2
 
-# Display Result
+# Display and log Result
 if __name__ == "__main__":
-    print(f"Conditional probability for next eruption < 60 mins: {combined_conditional_probability:.3f}")
+    result_msg = f"Conditional probability for next eruption < 60 mins: {combined_conditional_probability:.3f}"
+    logging.info(result_msg)
