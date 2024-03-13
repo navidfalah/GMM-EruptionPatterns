@@ -19,3 +19,12 @@ To get started with this project, clone the repository and install the required 
 git clone https://github.com/your-username/OldFaithful-EruptionGMM.git
 cd OldFaithful-EruptionGMM
 pip install -r requirements.txt
+
+
+
+
+clone the project 
+cd to the project
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
