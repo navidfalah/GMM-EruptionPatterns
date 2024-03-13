@@ -1,7 +1,4 @@
-Certainly! Here's the README with all the additional details organized within a collapsible dropdown:
-
-<details>
-<summary># Simulated Eruption Analysis 🌋</summary>
+# GMM-EruptionPatterns 
 
 Welcome to our volcanic eruption analysis repository! Here, we dive into the fascinating world of volcanic activity 🌋, analyzing data from different components to unravel their eruption patterns and probabilities.
 
