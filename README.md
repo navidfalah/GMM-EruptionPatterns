@@ -1,4 +1,4 @@
-# GMM-EruptionPatterns 
+# GMM-EruptionPatterns 🌋
 
 Welcome to our volcanic eruption analysis repository! Here, we dive into the fascinating world of volcanic activity 🌋, analyzing data from different components to unravel their eruption patterns and probabilities.
 
@@ -50,6 +50,27 @@ Dive into the files:
 - `eruption_analysis.py`: Functions for generating simulated eruption data, analyzing eruption patterns, and calculating probabilities.
 - `simulate_conditional_distribution.py`: Simulates the conditional distribution for the time until the next eruption.
 - `tests/test_eruption_analysis.py`: Unit tests for validating the functions in `eruption_analysis.py`.
+
+## Actual Data 📊
+
+![Actual Data](https://raw.githubusercontent.com/navidfalah/GMM-EruptionPatterns/main/data/actual.png)
+
+The actual data represents the eruption patterns observed at Old Faithful geyser in Yellowstone National Park. It follows a 2-component Gaussian mixture model (GMM) where each component represents a distinct pattern of eruption behavior.
+
+A 2-component GMM with full covariance matrices was fitted to the data using the Expectation-Maximization (EM) algorithm. The estimated parameters are as follows:
+- Component Prior Probabilities: α̂₁ = 0.356, α̂₂ = 0.644.
+- Component Means: 𝜇̂₁ = [2.04, 54.5], 𝜇̂₂ = [4.29, 80.0].
+- Component Covariance Matrices:
+  𝚺̂₁ = [[0.0693, 0.436],
+         [0.436, 33.7]],
+  𝚺̂₂ = [[0.170, 0.939],
+         [0.939, 36.0]].
+
+## Simulated Data 📈
+
+![Simulated Data](https://raw.githubusercontent.com/navidfalah/GMM-EruptionPatterns/main/data/simulated.png)
+
+The simulated data represents the eruption patterns generated using the parameters estimated from the actual data. It helps verify the accuracy of the GMM model in capturing the underlying eruption behavior.
 
 ## Usage 🧑‍💻
 
