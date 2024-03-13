@@ -1,7 +1,7 @@
-Certainly! Here's the revised README with the additional details and the updated project structure:
+Certainly! Here's the README with all the additional details organized within a collapsible dropdown:
 
-```markdown
-# Simulated Eruption Analysis 🌋
+<details>
+<summary># Simulated Eruption Analysis 🌋</summary>
 
 Welcome to our volcanic eruption analysis repository! Here, we dive into the fascinating world of volcanic activity 🌋, analyzing data from different components to unravel their eruption patterns and probabilities.
 
@@ -79,7 +79,7 @@ Witness the tests ensuring the integrity of our eruption analysis functions! �
 ## Project Structure 🌳
 
 ```
-.
+
 ├── LICENSE
 ├── main.py
 ├── __pycache__
@@ -118,6 +118,7 @@ Witness the tests ensuring the integrity of our eruption analysis functions! �
     │   ├── test_d.cpython-310-pytest-8.1.1.pyc
     │   └── test_qusetions.cpython-310-pytest-8.1.1.pyc
     └── test_qusetions.py
+
 ```
 
 ## Contributors 👥
@@ -125,6 +126,3 @@ Witness the tests ensuring the integrity of our eruption analysis functions! �
 ## License ⚖️
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-```
-
-This README now includes the project structure, logging usage, implementation via `main.py`, simulation details, and the pytest setup.
