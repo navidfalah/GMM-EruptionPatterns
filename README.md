@@ -1,6 +1,6 @@
-# GMM-EruptionPatterns 🌋
+# Old Faithful Eruption Analysis Repository 🌋
 
-Welcome to our volcanic eruption analysis repository! Here, we dive into the fascinating world of volcanic activity 🌋, analyzing data from different components to unravel their eruption patterns and probabilities.
+Explore the fascinating eruption patterns of Old Faithful geyser in Yellowstone National Park. The repository delves into analyzing the duration of eruptions and the intervals between them, which are modeled using a sophisticated 2-component Gaussian mixture model (GMM). Discover insights into the predictability and behavior of this iconic natural phenomenon. 🏞️
 
 ## Getting Started 🚀
 
