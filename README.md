@@ -6,12 +6,43 @@ Welcome to our volcanic eruption analysis repository! Here, we dive into the fas
 
 To embark on this volcanic journey:
 
-1. 📥 Clone the repository to your local machine.
-2. 🐍 Ensure you have Python installed (version 3.6 or higher).
-3. 🛠️ Install the required dependencies using:
+
+1. **Clone the Project** 📥
+   ```
+   git clone <project_url>
+   ```
+
+2. **Navigate to the Project Directory** 📂
+   ```
+   cd <project_directory>
+   ```
+
+3. **Create a Virtual Environment** 🐍
+   ```
+   python -m venv .venv
+   ```
+
+4. **Activate the Virtual Environment** 💻
+   - For Windows:
+     ```
+     .venv\Scripts\activate
+     ```
+   - For Unix/macOS:
+     ```
+     source .venv/bin/activate
+     ```
+
+5. **Install Dependencies** 🛠️
    ```
    pip install -r requirements.txt
    ```
+
+6. **Set PYTHONPATH Environment Variable** 🌐
+   ```
+   export PYTHONPATH=/home/navid/Desktop/GMM-EruptionPatterns
+   ```
+
+Now you're all set to explore the volcanic eruption analysis project! 🌋
 
 ## Overview 📋
 
