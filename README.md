@@ -1,3 +1,6 @@
+Certainly! Here's the revised README with the additional details and the updated project structure:
+
+```markdown
 # Simulated Eruption Analysis 🌋
 
 Welcome to our volcanic eruption analysis repository! Here, we dive into the fascinating world of volcanic activity 🌋, analyzing data from different components to unravel their eruption patterns and probabilities.
@@ -5,7 +8,6 @@ Welcome to our volcanic eruption analysis repository! Here, we dive into the fas
 ## Getting Started 🚀
 
 To embark on this volcanic journey:
-
 
 1. **Clone the Project** 📥
    ```
@@ -74,10 +76,55 @@ pytest
 
 Witness the tests ensuring the integrity of our eruption analysis functions! 🔍
 
+## Project Structure 🌳
+
+```
+.
+├── LICENSE
+├── main.py
+├── __pycache__
+│   ├── gmm_parameters.cpython-310.pyc
+│   ├── parameters.cpython-310.pyc
+│   ├── question_a.cpython-310.pyc
+│   ├── question_b.cpython-310.pyc
+│   ├── question_c.cpython-310.pyc
+│   ├── question_d.cpython-310.pyc
+│   └── simulation.cpython-310.pyc
+├── questions
+│   ├── __init__.py
+│   ├── parameters.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-310.pyc
+│   │   ├── parameters.cpython-310.pyc
+│   │   ├── question_a.cpython-310.pyc
+│   │   ├── question_b.cpython-310.pyc
+│   │   ├── question_c.cpython-310.pyc
+│   │   └── question_d.cpython-310.pyc
+│   ├── question_a.py
+│   ├── question_b.py
+│   ├── question_c.py
+│   └── question_d.py
+├── README.md
+├── requirements.txt
+├── script_logs.log
+├── simulation.py
+└── tests
+    ├── __init__.py
+    ├── __pycache__
+    │   ├── __init__.cpython-310.pyc
+    │   ├── test_a.cpython-310-pytest-8.1.1.pyc
+    │   ├── test_b.cpython-310-pytest-8.1.1.pyc
+    │   ├── test_c.cpython-310-pytest-8.1.1.pyc
+    │   ├── test_d.cpython-310-pytest-8.1.1.pyc
+    │   └── test_qusetions.cpython-310-pytest-8.1.1.pyc
+    └── test_qusetions.py
+```
+
 ## Contributors 👥
-
-
 
 ## License ⚖️
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+```
+
+This README now includes the project structure, logging usage, implementation via `main.py`, simulation details, and the pytest setup.
