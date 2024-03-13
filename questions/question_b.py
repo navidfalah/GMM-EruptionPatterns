@@ -24,12 +24,8 @@ def integrate_pdf_over_range(mean, covariance, x_bounds, y_bounds):
 def compute_probability_with_pdf():
     x_bounds = [3, 4]  # Eruption duration between 3 and 4 minutes
     y_bounds = [60, 70]  # Time to next eruption between 60 and 70 minutes
-    
-    # Integrate over the PDF for each component
     probability_1 = integrate_pdf_over_range(mean_1, covariance_1, x_bounds, y_bounds)
     probability_2 = integrate_pdf_over_range(mean_2, covariance_2, x_bounds, y_bounds)
-    
-    # Weighted sum of probabilities for each component
     combined_probability = mix_ratio_1 * probability_1 + mix_ratio_2 * probability_2
     return combined_probability
 

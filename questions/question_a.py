@@ -1,11 +1,10 @@
 import sys
-from os.path import dirname, join, abspath
+from os.path import dirname, join
 sys.path.insert(0, join(dirname(__file__), '..'))
 import logging
 from questions.parameters import mix_ratio_1, mix_ratio_2
-
-
 logging.basicConfig(level=logging.INFO, format='%(message)s')
+
 
 def compute_expected_eruptions():
     expected_eruptions_1 = 10 * mix_ratio_1

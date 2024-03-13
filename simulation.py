@@ -1,11 +1,9 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from scipy.stats import multivariate_normal, norm
+from scipy.stats import norm
+from questions.parameters import(mix_ratio_1, mix_ratio_2,
+mean_1, mean_2, covariance_1, covariance_2)
 
-# Define the simulation parameters
-mix_ratio_1, mix_ratio_2 = 0.356, 0.644
-mean_1, mean_2 = [2.04, 54.5], [4.29, 80.0]
-covariance_1, covariance_2 = [[0.0693, 0.436], [0.436, 33.7]], [[0.170, 0.939], [0.939, 36.0]]
 
 def generate_dataset():
     """Generate a dataset based on the Gaussian Mixture Model parameters."""
@@ -63,23 +61,18 @@ def simulate_conditional_distribution(num_samples=500, observed_eruption_time=3,
     """Simulate the conditional distribution for the time until the next eruption."""
     if updated_probability_1 is None:
         updated_probability_1 = calculate_updated_probability(observed_eruption_time)
-    # Calculate conditional means and variances
     conditional_means = [mean_1[1] + (covariance_1[0][1] / np.sqrt(covariance_1[0][0])) * (observed_eruption_time - mean_1[0]),
                          mean_2[1] + (covariance_2[0][1] / np.sqrt(covariance_2[0][0])) * (observed_eruption_time - mean_2[0])]
     conditional_variances = [covariance_1[1][1] * (1 - (covariance_1[0][1]**2 / (covariance_1[0][0] * covariance_1[1][1]))),
                              covariance_2[1][1] * (1 - (covariance_2[0][1]**2 / (covariance_2[0][0] * covariance_2[1][1])))]
-    # Simulate times for both components
     simulated_times_1 = norm(conditional_means[0], np.sqrt(conditional_variances[0])).rvs(num_samples)
     simulated_times_2 = norm(conditional_means[1], np.sqrt(conditional_variances[1])).rvs(num_samples)
-    # Calculate probabilities based on simulations
     simulated_prob_1 = np.mean(simulated_times_1 < 60)
     simulated_prob_2 = np.mean(simulated_times_2 < 60)
-    # Combine probabilities using the updated probability for component 1
     combined_prob = updated_probability_1 * simulated_prob_1 + (1 - updated_probability_1) * simulated_prob_2
     print(f"Conditional probability for next eruption < 60 mins: {combined_prob:.3f}")
     return combined_prob
 
-#  Generate dataset and perform analysis
 if __name__=="__main__":
     data = generate_dataset()
     plot_data(data)

@@ -1,10 +1,7 @@
 import subprocess
 import logging
 
-# Setup basic logging
-logging.basicConfig(level=logging.INFO, filename='script_logs.log', filemode='a',
-                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-
+logging.basicConfig(level=logging.INFO, filename='script_logs.log', filemode='a',format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
 def run_script(script_name):
     try:
@@ -17,6 +14,5 @@ def run_script(script_name):
 if __name__ == "__main__":
     scripts = ["questions/question_a.py", "questions/question_b.py", "questions/question_c.py", "questions/question_d.py"]
 
-    # scripts = ["questions/question_a.py", "questions/question_b.py", "questions/question_c.py", "questions/question_d.py"]
     for script in scripts:
         run_script(script)
