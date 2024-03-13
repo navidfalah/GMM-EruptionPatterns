@@ -1,47 +1,43 @@
-import unittest
+import matplotlib.pyplot as plt
+from scipy.stats import multivariate_normal
 import numpy as np
 
-class TestEruptionPredictions(unittest.TestCase):
-    @classmethod
-    def setUpClass(cls):
-        # Generate synthetic data
-        np.random.seed(42)  # Ensure reproducibility
-        cls.eruption_times = np.random.normal(4, 2, 1000)  # Mean, SD, samples
-        cls.waiting_times = np.random.normal(70, 10, 1000)
-        
-        # Example parameters for mixture model
-        cls.mix_ratio_1 = 0.6
-        cls.mix_ratio_2 = 0.4
+# Redefine the parameters based on the provided image
+mix_ratio_1 = 0.45  # Slightly less than half of the points seem to be yellow
+mix_ratio_2 = 0.55  # Slightly more than half of the points seem to be purple
 
-    def test_expected_eruptions(self):
-        # Manually calculate expected eruptions
-        expected_eruptions_1 = self.mix_ratio_1 * len(self.eruption_times)
-        expected_eruptions_2 = self.mix_ratio_2 * len(self.eruption_times)
+# Estimates for the mean values based on the image
+mean_1 = [2.5, 55]  # Yellow cluster
+mean_2 = [4.5, 80]  # Purple cluster
 
-        # Placeholder for your function's results, replace with actual calls
-        result_1 = expected_eruptions_1  # Replace with function call
-        result_2 = expected_eruptions_2  # Replace with function call
+# Estimates for the covariance matrices based on the spread of the points in the image
+# Yellow cluster is more spread in the x-axis and less in y-axis
+covariance_1 = [[0.3, 0], [0, 20]]
+# Purple cluster is less spread in the x-axis and more in y-axis
+covariance_2 = [[0.1, 0], [0, 30]]
 
-        self.assertAlmostEqual(result_1, expected_eruptions_1, delta=1)
-        self.assertAlmostEqual(result_2, expected_eruptions_2, delta=1)
+# Number of samples to generate
+num_samples = 1000
 
-    def test_specific_eruption_probability(self):
-        # Define bounds
-        duration_low, duration_high = 3, 5
-        waiting_low, waiting_high = 60, 80
+# Samples allocation according to mix ratios
+num_samples_1 = int(num_samples * mix_ratio_1)
+num_samples_2 = num_samples - num_samples_1
 
-        # Manually calculate probabilities
-        prob_duration = np.mean((self.eruption_times > duration_low) & (self.eruption_times < duration_high))
-        prob_waiting = np.mean((self.waiting_times > waiting_low) & (self.waiting_times < waiting_high))
+# Generating samples for each component
+samples_1 = np.random.multivariate_normal(mean_1, covariance_1, num_samples_1)
+samples_2 = np.random.multivariate_normal(mean_2, covariance_2, num_samples_2)
 
-        combined_prob_manual = prob_duration * prob_waiting  # Simplification
+# Combine the samples to form the complete dataset
+data = np.concatenate((samples_1, samples_2), axis=0)
 
-        # Placeholder for your function's result, replace with actual call
-        combined_prob_function = combined_prob_manual  # Replace with function call
+# Shuffle the dataset to mix the samples from the two components
+np.random.shuffle(data)
 
-        self.assertAlmostEqual(combined_prob_function, combined_prob_manual, delta=0.05)
-
-    # Similar structure for tests of parts C and D
-
-if __name__ == '__main__':
-    unittest.main()
+# Scatter plot of the generated data
+plt.figure(figsize=(8, 6))
+plt.scatter(data[:, 0], data[:, 1], c=np.linspace(0, 1, num_samples), cmap='viridis')
+plt.colorbar(label='Component mix ratio')
+plt.xlabel('Eruption time (min)')
+plt.ylabel('Time to next eruption (min)')
+plt.title('Simulated Eruption Data')
+plt.show()
