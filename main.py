@@ -15,7 +15,7 @@ def run_script(script_name):
         logging.error(f"Script {script_name} failed with error {e}")
 
 if __name__ == "__main__":
-    scripts = ["tests/test_a.py", ]
+    scripts = ["questions/question_a.py", "questions/question_b.py", "questions/question_c.py", "questions/question_d.py"]
 
     # scripts = ["questions/question_a.py", "questions/question_b.py", "questions/question_c.py", "questions/question_d.py"]
     for script in scripts:
