@@ -125,7 +125,44 @@ Witness the tests ensuring the integrity of our eruption analysis functions! �
 
 ```
 
-## Contributors 👥
+## Logging Feature README 📝
+
+Welcome to the Logging Feature README! This document provides an overview of the logging functionality implemented in the project.
+
+### Purpose ℹ️
+
+The logging feature is designed to track the execution of scripts within the project, providing valuable insights into their performance and any encountered errors or issues.
+
+### Logging Structure 📋
+
+The logging messages follow a structured format:
+
+```
+<timestamp> - <logger_name> - <log_level> - <message>
+```
+
+- **Timestamp**: Indicates the date and time of the log entry.
+- **Logger Name**: Identifies the logger responsible for the log entry.
+- **Log Level**: Indicates the severity level of the log message (e.g., INFO, ERROR).
+- **Message**: Describes the event or information being logged.
+
+### Example Logs 📄
+
+Here are some example log entries:
+
+```
+2024-03-13 13:58:45,022 - root - ERROR - Script tests/test_a.py failed with error Command '['python', 'tests/test_a.py']' returned non-zero exit status 1.
+2024-03-13 13:59:08,020 - root - INFO - Starting script tests/test_a.py
+2024-03-13 15:15:52,318 - root - INFO - Starting script questions/question_a.py
+
+```
+
+### Log Interpretation 🔍
+
+- **Starting Script**: Indicates the initiation of execution for a particular script.
+- **Completed Script**: Marks the successful completion of a script's execution.
+- **Error**: Alerts about any encountered errors or failures during script execution.
+
 
 ## License ⚖️
 
