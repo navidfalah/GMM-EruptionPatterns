@@ -1,3 +1,6 @@
+import sys
+from os.path import dirname, join, abspath
+sys.path.insert(0, join(dirname(__file__), '..'))
 from scipy.stats import norm
 from parameters import mix_ratio_1, mix_ratio_2, mean_1, mean_2, covariance_1, covariance_2
 import logging

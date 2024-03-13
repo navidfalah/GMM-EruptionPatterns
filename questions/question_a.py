@@ -1,5 +1,10 @@
+import sys
+from os.path import dirname, join, abspath
+sys.path.insert(0, join(dirname(__file__), '..'))
+
 from parameters import mix_ratio_1, mix_ratio_2
 import logging
+
 
 logging.basicConfig(level=logging.INFO, format='%(message)s')
 

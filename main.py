@@ -5,6 +5,7 @@ import logging
 logging.basicConfig(level=logging.INFO, filename='script_logs.log', filemode='a',
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
+
 def run_script(script_name):
     try:
         logging.info(f"Starting script {script_name}")
@@ -14,6 +15,6 @@ def run_script(script_name):
         logging.error(f"Script {script_name} failed with error {e}")
 
 if __name__ == "__main__":
-    scripts = ["question_a.py", "question_b.py", "question_c.py", "question_d.py"]
+    scripts = ["questions/question_a.py", "questions/question_b.py", "questions/question_c.py", "questions/question_d.py"]
     for script in scripts:
         run_script(script)

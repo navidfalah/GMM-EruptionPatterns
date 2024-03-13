@@ -22,3 +22,34 @@
 2024-03-13 10:01:15,075 - root - INFO - Completed script question_c.py
 2024-03-13 10:01:15,075 - root - INFO - Starting script question_d.py
 2024-03-13 10:01:15,534 - root - INFO - Completed script question_d.py
+2024-03-13 10:30:09,690 - root - INFO - Starting script questions/question_a.py
+2024-03-13 10:30:09,713 - root - ERROR - Script questions/question_a.py failed with error Command '['python', 'questions/question_a.py']' returned non-zero exit status 1.
+2024-03-13 10:30:09,713 - root - INFO - Starting script questions/question_b.py
+2024-03-13 10:30:11,603 - root - ERROR - Script questions/question_b.py failed with error Command '['python', 'questions/question_b.py']' returned non-zero exit status 1.
+2024-03-13 10:30:11,603 - root - INFO - Starting script questions/question_c.py
+2024-03-13 10:30:12,053 - root - ERROR - Script questions/question_c.py failed with error Command '['python', 'questions/question_c.py']' returned non-zero exit status 1.
+2024-03-13 10:30:12,053 - root - INFO - Starting script questions/question_d.py
+2024-03-13 10:30:12,500 - root - ERROR - Script questions/question_d.py failed with error Command '['python', 'questions/question_d.py']' returned non-zero exit status 1.
+2024-03-13 10:33:20,645 - root - INFO - Starting script questions/question_a.py
+2024-03-13 10:33:20,663 - root - INFO - Completed script questions/question_a.py
+2024-03-13 10:33:20,663 - root - INFO - Starting script questions/question_b.py
+2024-03-13 10:33:21,108 - root - ERROR - Script questions/question_b.py failed with error Command '['python', 'questions/question_b.py']' returned non-zero exit status 1.
+2024-03-13 10:33:21,108 - root - INFO - Starting script questions/question_c.py
+2024-03-13 10:33:21,561 - root - ERROR - Script questions/question_c.py failed with error Command '['python', 'questions/question_c.py']' returned non-zero exit status 1.
+2024-03-13 10:33:21,561 - root - INFO - Starting script questions/question_d.py
+2024-03-13 10:33:22,013 - root - ERROR - Script questions/question_d.py failed with error Command '['python', 'questions/question_d.py']' returned non-zero exit status 1.
+2024-03-13 10:33:40,585 - root - INFO - Starting script questions/question_a.py
+2024-03-13 10:33:40,593 - root - ERROR - Script questions/question_a.py failed with error Command '['python', 'questions/question_a.py']' returned non-zero exit status 1.
+2024-03-13 10:33:40,593 - root - INFO - Starting script questions/question_b.py
+2024-03-13 10:33:41,038 - root - ERROR - Script questions/question_b.py failed with error Command '['python', 'questions/question_b.py']' returned non-zero exit status 1.
+2024-03-13 10:33:41,038 - root - INFO - Starting script questions/question_c.py
+2024-03-13 10:33:41,490 - root - ERROR - Script questions/question_c.py failed with error Command '['python', 'questions/question_c.py']' returned non-zero exit status 1.
+2024-03-13 10:33:41,490 - root - INFO - Starting script questions/question_d.py
+2024-03-13 10:33:41,940 - root - ERROR - Script questions/question_d.py failed with error Command '['python', 'questions/question_d.py']' returned non-zero exit status 1.
+2024-03-13 10:33:56,315 - root - INFO - Starting script questions/question_a.py
+2024-03-13 10:33:56,323 - root - ERROR - Script questions/question_a.py failed with error Command '['python', 'questions/question_a.py']' returned non-zero exit status 1.
+2024-03-13 10:33:56,323 - root - INFO - Starting script questions/question_b.py
+2024-03-13 10:33:56,771 - root - ERROR - Script questions/question_b.py failed with error Command '['python', 'questions/question_b.py']' returned non-zero exit status 1.
+2024-03-13 10:33:56,771 - root - INFO - Starting script questions/question_c.py
+2024-03-13 10:33:57,228 - root - ERROR - Script questions/question_c.py failed with error Command '['python', 'questions/question_c.py']' returned non-zero exit status 1.
+2024-03-13 10:33:57,228 - root - INFO - Starting script questions/question_d.py
