@@ -127,7 +127,7 @@ Witness the tests ensuring the integrity of our eruption analysis functions! �
 
 ## Logging Feature README 📝
 
-Welcome to the Logging Feature README! This document provides an overview of the logging functionality implemented in the project.
+This document provides an overview of the logging functionality implemented in the project.
 
 ### Purpose ℹ️
 
