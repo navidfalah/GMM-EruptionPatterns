@@ -8,12 +8,12 @@ To embark on this volcanic journey:
 
 1. **Clone the Project** 📥
    ```
-   git clone <project_url>
+   git clone https://github.com/navidfalah/GMM-EruptionPatterns.git
    ```
 
 2. **Navigate to the Project Directory** 📂
    ```
-   cd <project_directory>
+   cd GMM-EruptionPatterns
    ```
 
 3. **Create a Virtual Environment** 🐍
@@ -79,24 +79,9 @@ Witness the tests ensuring the integrity of our eruption analysis functions! �
 
 ├── LICENSE
 ├── main.py
-├── __pycache__
-│   ├── gmm_parameters.cpython-310.pyc
-│   ├── parameters.cpython-310.pyc
-│   ├── question_a.cpython-310.pyc
-│   ├── question_b.cpython-310.pyc
-│   ├── question_c.cpython-310.pyc
-│   ├── question_d.cpython-310.pyc
-│   └── simulation.cpython-310.pyc
 ├── questions
 │   ├── __init__.py
 │   ├── parameters.py
-│   ├── __pycache__
-│   │   ├── __init__.cpython-310.pyc
-│   │   ├── parameters.cpython-310.pyc
-│   │   ├── question_a.cpython-310.pyc
-│   │   ├── question_b.cpython-310.pyc
-│   │   ├── question_c.cpython-310.pyc
-│   │   └── question_d.cpython-310.pyc
 │   ├── question_a.py
 │   ├── question_b.py
 │   ├── question_c.py
@@ -107,13 +92,6 @@ Witness the tests ensuring the integrity of our eruption analysis functions! �
 ├── simulation.py
 └── tests
     ├── __init__.py
-    ├── __pycache__
-    │   ├── __init__.cpython-310.pyc
-    │   ├── test_a.cpython-310-pytest-8.1.1.pyc
-    │   ├── test_b.cpython-310-pytest-8.1.1.pyc
-    │   ├── test_c.cpython-310-pytest-8.1.1.pyc
-    │   ├── test_d.cpython-310-pytest-8.1.1.pyc
-    │   └── test_qusetions.cpython-310-pytest-8.1.1.pyc
     └── test_qusetions.py
 
 ```
